@@ -36,7 +36,7 @@ export async function generateMetadata({
       images: project.assets.cover
         ? [
             {
-              url: `https://faiz-alfarisi.vercel.app/${project.assets.cover}`,
+              url: `https://faizalfarisi.vercel.app/${project.assets.cover}`,
               width: 1200,
               height: 750,
               alt: project.title,
@@ -49,7 +49,7 @@ export async function generateMetadata({
       title: project.title,
       description: project.tagline,
       images: project.assets.cover
-        ? [`https://faiz-alfarisi.vercel.app/${project.assets.cover}`]
+        ? [`https://faizalfarisi.vercel.app/${project.assets.cover}`]
         : [],
     },
   };

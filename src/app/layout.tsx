@@ -35,18 +35,18 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Fa'iz Alfarisi" }],
   creator: "Fa'iz Alfarisi",
-  metadataBase: new URL("https://faiz-alfarisi.vercel.app"),
+  metadataBase: new URL("https://faizalfarisi.vercel.app"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://faiz-alfarisi.vercel.app",
+    url: "https://faizalfarisi.vercel.app",
     siteName: "Fa'iz Alfarisi Portfolio",
     title: "Fa'iz Alfarisi - Building Intelligent Systems",
     description:
       "Backend Developer with a Mathematics background, building intelligent systems that combine AI, software engineering, and real-world usability.",
     images: [
       {
-        url: "https://faiz-alfarisi.vercel.app/og-image.png",
+        url: "https://faizalfarisi.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Fa'iz Alfarisi Portfolio",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     title: "Fa'iz Alfarisi - Building Intelligent Systems",
     description:
       "Backend Developer with a Mathematics background, building intelligent systems that combine AI, software engineering, and real-world usability.",
-    images: ["https://faiz-alfarisi.vercel.app/og-image.png"],
+    images: ["https://faizalfarisi.vercel.app/og-image.png"],
   },
   robots: {
     index: true,

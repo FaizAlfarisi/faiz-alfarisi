@@ -2,7 +2,7 @@
 
 A personal portfolio showcasing engineering work in AI and software development.
 
-**Live:** [faiz-alfarisi.vercel.app](https://faiz-alfarisi.vercel.app)
+**Live:** [faizalfarisi.vercel.app](https://faizalfarisi.vercel.app)
 
 ## Tech Stack
 
