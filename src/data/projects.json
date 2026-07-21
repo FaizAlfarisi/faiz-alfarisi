@@ -1,0 +1,1482 @@
+{
+  "featured": [
+        {
+            "id": "ragnamok",
+
+            "title": "RAGnamok",
+
+            "slug": "ragnamok",
+
+            "featured": true,
+
+            "category": "AI Systems",
+
+            "domains": [
+                "Retrieval-Augmented Generation",
+                "LLM",
+                "Backend",
+                "Applied AI"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Active Development",
+
+            "year": 2026,
+
+            "tagline": "A privacy-first, fully local Retrieval-Augmented Generation system designed for scalable document intelligence.",
+
+            "summary": "Designed and developed a modular Retrieval-Augmented Generation (RAG) system capable of ingesting multimodal PDF documents, generating structured knowledge representations, and answering user queries using local language models.",
+
+            "problem": "Most RAG solutions rely on external cloud APIs, making them unsuitable for privacy-sensitive documents while also limiting customization of the retrieval pipeline.",
+
+            "solution": "Built a fully local, modular RAG pipeline using FastAPI, PostgreSQL with pgvector, LangChain, and Ollama. The system supports asynchronous document ingestion, multi-vector retrieval, configurable pipelines, and REST APIs for seamless integration.",
+
+            "impact": "Provides a production-oriented foundation for privacy-preserving document intelligence while remaining fully extensible for future AI capabilities.",
+
+            "engineering_decisions": [
+                "Adopted PostgreSQL with pgvector to leverage relational storage alongside vector search in a single database.",
+                "Implemented asynchronous processing to decouple document ingestion from user interactions.",
+                "Used a modular architecture to allow independent experimentation with parsers, retrievers, embeddings, and language models.",
+                "Designed the retrieval pipeline around Multi-Vector Retrieval to improve semantic recall beyond conventional chunk-based approaches."
+            ],
+
+            "challenges": [
+                "Designing a flexible pipeline that supports multiple document processing strategies.",
+                "Balancing retrieval quality with indexing performance.",
+                "Maintaining modularity without sacrificing system simplicity."
+            ],
+
+            "lessons_learned": [
+                "Retrieval quality often has a greater impact than model size.",
+                "Well-designed system architecture accelerates experimentation significantly.",
+                "Local AI systems require careful engineering beyond model implementation."
+            ],
+
+            "future_improvements": [
+                "Hybrid Search",
+                "Reranking Pipeline",
+                "Knowledge Graph Integration",
+                "Agentic Workflow",
+                "Vision-Language Model Support"
+            ],
+
+            "tech_stack": [
+                "Python",
+                "FastAPI",
+                "LangChain",
+                "PostgreSQL",
+                "pgvector",
+                "Ollama",
+                "Docker",
+                "Streamlit"
+            ],
+
+            "features": [
+                "Multimodal PDF Ingestion",
+                "Multi-Vector Retrieval",
+                "REST API",
+                "Asynchronous Processing",
+                "Background Task Queue",
+                "Local LLM Integration",
+                "Docker Deployment"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Document Upload",
+                "Parser",
+                "Content Extraction",
+                "Summarization",
+                "Embedding",
+                "PostgreSQL + pgvector",
+                "Retriever",
+                "Local LLM",
+                "Answer Generation"
+                ]
+            },
+            "metrics": {
+                "accuracy": "Relevance: 5.00/5 | Correctness: 4.46/5 | Hallucination: 4.36/5 (higher=better)",
+                "performance": "Gen Time: 0.9s avg | Refusal (neg. queries): 4.45/5",
+                "dataset": "50/50 CV queries",
+                "users": "Evaluated by gemma4:31b-cloud as LLM Judge",
+                "other": [
+                    "Embedding model: blaifa/multilingual-e5-large-instruct:Q8_0",
+                    "Completeness: 4.64/5",
+                    "Generation model: gemma4:31b-cloud"
+                ]
+            },
+            "links": {
+                "github": "https://github.com/FaizAlfarisi/RAGnamok",
+                "demo": "https://ragnamok.streamlit.app/",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/ragnamok/cover.webp",
+                "architecture": "images/projects/ragnamok/architecture.svg",
+                "gallery": [
+                "images/projects/ragnamok/upload.webp",
+                "images/projects/ragnamok/chat.webp",
+                "images/projects/ragnamok/retrieval.webp"
+                ]
+            }
+        },
+        {
+            "id": "bisindo-generalization",
+
+            "priority": 2,
+
+            "title": "BISINDO Gesture Recognition Generalization",
+
+            "slug": "bisindo-gesture-recognition-generalization",
+
+            "featured": true,
+
+            "category": "Applied AI Research",
+
+            "domains": [
+                "Computer Vision",
+                "Machine Learning",
+                "Human Pose Estimation",
+                "Applied AI"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Research Completed",
+
+            "year": 2026,
+
+            "tagline": "Improving the generalization of BISINDO gesture recognition through realistic 3D keypoint augmentation.",
+
+            "summary": "Designed and developed a machine learning pipeline to improve the cross-domain generalization of BISINDO alphabet recognition by introducing scenario-based 3D keypoint augmentation using MediaPipe hand landmarks.",
+
+            "problem": "Gesture recognition models trained on a single subject often achieve excellent evaluation scores on internal datasets but fail to generalize to new users, devices, and real-world environments due to overfitting.",
+
+            "solution": "Proposed a realistic 3D keypoint augmentation framework that simulates natural hand variations before training an MLP classifier. The pipeline includes landmark normalization, feature engineering, augmentation, model training, and cross-domain evaluation.",
+
+            "impact": "Improved cross-domain F1-Score from 67.20% to 89.55% (+22.35%) while maintaining high internal performance, demonstrating a substantial improvement in model generalization.",
+
+            "engineering_decisions": [
+                "Used MediaPipe 3D hand landmarks instead of raw images to reduce computational complexity while preserving gesture semantics.",
+                "Designed realistic augmentation strategies based on natural hand movement rather than random perturbations.",
+                "Implemented wrist-centered normalization and scale normalization to improve robustness across users.",
+                "Evaluated the model using an external dataset to measure real-world generalization instead of relying solely on internal validation."
+            ],
+
+            "challenges": [
+                "Designing augmentation strategies that introduce realistic variations without distorting gesture semantics.",
+                "Preventing overfitting caused by single-subject training data.",
+                "Maintaining stable training performance while increasing data diversity."
+            ],
+
+            "lessons_learned": [
+                "Improving generalization is often more valuable than pursuing higher training accuracy.",
+                "Carefully designed synthetic data can outperform simply collecting more data.",
+                "External evaluation is essential for validating real-world machine learning performance."
+            ],
+
+            "future_improvements": [
+                "Evaluate on larger multi-subject datasets.",
+                "Explore Graph Neural Networks for hand landmark representation.",
+                "Investigate Transformer-based sequence modeling for gesture recognition.",
+                "Extend the system to real-time sentence-level BISINDO recognition."
+            ],
+
+            "tech_stack": [
+                "Python",
+                "PyTorch",
+                "MediaPipe",
+                "NumPy",
+                "Scikit-learn"
+            ],
+
+            "features": [
+                "3D Hand Landmark Extraction",
+                "Scenario-Based Keypoint Augmentation",
+                "Feature Normalization",
+                "MLP Classification",
+                "Cross-Domain Evaluation",
+                "Training Stability Analysis"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Hand Image",
+                "MediaPipe",
+                "3D Keypoints",
+                "Normalization",
+                "Scenario-Based Augmentation",
+                "Feature Vector",
+                "MLP Classifier",
+                "Prediction"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "Single-subject training dataset + external cross-domain evaluation dataset",
+                "users": "",
+                "other": [
+                "Internal F1-Score: 99.02%",
+                "Cross-Domain F1-Score: 89.55%",
+                "Generalization Improvement: +22.35%",
+                "Baseline Cross-Domain F1-Score: 67.20%"
+                ]
+            },
+
+            "links": {
+                "github": "https://github.com/FaizAlfarisi/bisindo-ai.git",
+                "demo": "https://bisindo-ai.vercel.app/",
+                "paper": "https://doi.org/10.15294/sji.v11i2.42221"
+            },
+
+            "assets": {
+                "cover": "images/projects/bisindo-generalization/cover.webp",
+                "architecture": "images/projects/bisindo-generalization/architecture.svg",
+                "gallery": [
+                "images/projects/bisindo-generalization/augmentation.webp",
+                "images/projects/bisindo-generalization/evaluation.webp",
+                "images/projects/bisindo-generalization/results.webp"
+                ]
+            }
+        },
+        {
+            "id": "safe-laboratory",
+
+            "priority": 3,
+
+            "title": "S.A.F.E. Laboratory",
+
+            "slug": "safe-laboratory",
+
+            "featured": true,
+
+            "category": "AIoT System",
+
+            "domains": [
+                "Computer Vision",
+                "Edge AI",
+                "Internet of Things",
+                "Applied AI"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Completed",
+
+            "year": 2024,
+
+            "tagline": "An AIoT-based laboratory access system integrating computer vision and IoT for automated PPE compliance verification.",
+
+            "summary": "Developed the AI component of a smart laboratory access system that verifies Personal Protective Equipment (PPE) compliance in real time before granting laboratory access through an RFID-enabled attendance workflow.",
+
+            "problem": "Laboratory safety inspections are often performed manually, making them time-consuming, inconsistent, and prone to human error before users enter restricted laboratory areas.",
+
+            "solution": "Designed and trained a YOLOv5 object detection model for PPE detection, integrated through a Flask API with an IoT-based attendance system using ESP32 and RFID to automate laboratory entry validation.",
+
+            "impact": "Achieved 93–97% PPE detection accuracy and was selected as a Top 10 Finalist among 7,590 participants in Samsung Innovation Campus Batch 5.",
+
+            "engineering_decisions": [
+                "Collected and manually annotated a custom PPE dataset to improve detection performance under realistic laboratory conditions.",
+                "Separated AI inference from the web application through a Flask API for modular deployment.",
+                "Integrated the AI model with IoT hardware to enable automated access control instead of standalone object detection.",
+                "Prioritized real-time inference speed while maintaining reliable detection accuracy."
+            ],
+
+            "challenges": [
+                "Collecting sufficient PPE images with diverse lighting conditions and viewing angles.",
+                "Balancing detection accuracy with inference latency for real-time operation.",
+                "Integrating AI inference with RFID-based hardware communication."
+            ],
+
+            "lessons_learned": [
+                "Deploying AI systems requires significantly more engineering than model training alone.",
+                "Dataset quality often contributes more to performance than architectural complexity.",
+                "System integration becomes the primary challenge once the model reaches acceptable accuracy."
+            ],
+
+            "future_improvements": [
+                "Deploy optimized models using TensorRT or ONNX Runtime.",
+                "Expand PPE categories for broader industrial safety applications.",
+                "Support multiple simultaneous users.",
+                "Implement edge deployment for lower latency."
+            ],
+
+            "tech_stack": [
+                "Python",
+                "PyTorch",
+                "YOLOv5",
+                "Flask",
+                "ESP32",
+                "RFID",
+                "OpenCV"
+            ],
+
+            "features": [
+                "Real-time PPE Detection",
+                "RFID Attendance Integration",
+                "Flask REST API",
+                "Custom Dataset Pipeline",
+                "Automated Laboratory Access Validation"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Camera",
+                "YOLOv5",
+                "Flask API",
+                "ESP32",
+                "RFID",
+                "Access Decision"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "88-97%",
+                "performance": "",
+                "dataset": "3,500+ manually collected and annotated images",
+                "users": "",
+                "other": [
+                "Top 10 Finalist among 7,590 participants",
+                "Samsung Innovation Campus Batch 5"
+                ]
+            },
+
+            "links": {
+                "github": "",
+                "demo": "",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/safe-laboratory/cover.webp",
+                "architecture": "images/projects/safe-laboratory/architecture.svg",
+                "gallery": [
+                "images/projects/safe-laboratory/detection.webp",
+                "images/projects/safe-laboratory/system.webp",
+                "images/projects/safe-laboratory/demo.webp"
+                ]
+            }
+        },
+        {
+            "id": "route-optimization-ils-rvnd",
+
+            "priority": 4,
+
+            "title": "Route Optimization using ILS-RVND",
+
+            "slug": "route-optimization-ils-rvnd",
+
+            "featured": true,
+
+            "category": "Optimization System",
+
+            "domains": [
+                "Optimization",
+                "Operations Research",
+                "Algorithm Engineering",
+                "Data Science"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Completed",
+
+            "year": 2025,
+
+            "tagline": "A web-based route optimization system implementing the Iterated Local Search with Random Variable Neighborhood Descent (ILS-RVND) algorithm.",
+
+            "summary": "Developed a complete optimization application that solves routing problems by implementing the ILS-RVND metaheuristic from scratch, allowing users to generate efficient travel routes through an interactive web interface.",
+
+            "problem": "Finding near-optimal routes for multiple destinations becomes computationally expensive as the number of locations increases, making brute-force approaches impractical for real-world applications.",
+
+            "solution": "Implemented the ILS-RVND optimization algorithm entirely from scratch in Python and deployed it as an interactive Streamlit application capable of solving routing problems with customizable datasets.",
+
+            "impact": "Successfully optimized routing scenarios containing up to 100 nodes while providing an accessible interface for experimentation and visualization.",
+
+            "engineering_decisions": [
+                "Implemented the ILS-RVND metaheuristic from scratch instead of relying on optimization libraries to better control algorithm behavior.",
+                "Separated optimization logic from visualization to improve maintainability.",
+                "Designed modular neighborhood operators for easier experimentation and future extensions.",
+                "Used Streamlit to rapidly transform an optimization algorithm into an interactive application."
+            ],
+
+            "challenges": [
+                "Implementing multiple neighborhood search operators correctly.",
+                "Balancing solution quality with computational efficiency.",
+                "Visualizing optimization results in an intuitive way for end users."
+            ],
+
+            "lessons_learned": [
+                "Well-designed heuristics can produce near-optimal solutions within practical computation times.",
+                "Algorithm implementation quality is as important as algorithm selection.",
+                "Visualization greatly improves users' understanding of optimization results."
+            ],
+
+            "future_improvements": [
+                "Vehicle Routing Problem (VRP) support.",
+                "Time Window constraints.",
+                "Google Maps integration.",
+                "Real-world traffic estimation.",
+                "Benchmark against additional metaheuristics."
+            ],
+
+            "tech_stack": [
+                "Python",
+                "Streamlit",
+                "NumPy",
+                "Pandas",
+                "Matplotlib"
+            ],
+
+            "features": [
+                "ILS-RVND Implementation",
+                "Interactive Route Visualization",
+                "Custom Dataset Support",
+                "Optimization Parameter Configuration",
+                "Performance Comparison"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Input Dataset",
+                "Initial Solution",
+                "ILS",
+                "RVND",
+                "Optimized Route",
+                "Visualization"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "Supports optimization scenarios up to 100 nodes",
+                "dataset": "",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "https://github.com/FaizAlfarisi/route-optimization",
+                "demo": "https://route-optimization-ils-rvnd.streamlit.app/",
+                "paper": "https://route-optimization-ils-rvnd.streamlit.app/"
+            },
+
+            "assets": {
+                "cover": "images/projects/route-optimization/cover.webp",
+                "architecture": "images/projects/route-optimization/architecture.svg",
+                "gallery": [
+                "images/projects/route-optimization/dashboard.webp",
+                "images/projects/route-optimization/visualization.webp",
+                "images/projects/route-optimization/result.webp"
+                ]
+            }
+        }
+    ],
+    "archive": [
+        {
+            "id": "malika",
+
+            "priority": 5,
+
+            "title": "MALIKA: AI Adaptive Learning Platform",
+
+            "slug": "malika-ai-adaptive-learning-platform",
+
+            "featured": true,
+
+            "category": "AI Application",
+
+            "domains": [
+                "Generative AI",
+                "EdTech",
+                "Full-Stack Development",
+                "Applied AI"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Production",
+
+            "year": 2025,
+
+            "tagline": "An AI-powered adaptive learning platform that personalizes mathematics education through intelligent tutoring and assessment.",
+
+            "summary": "Built a full-stack educational platform integrating Generative AI to deliver personalized learning experiences, adaptive quizzes, and AI-assisted tutoring within a culturally contextualized mathematics curriculum.",
+
+            "problem": "Traditional digital learning platforms provide identical learning experiences for every student, making it difficult to accommodate different learning styles and provide immediate personalized assistance.",
+
+            "solution": "Developed a Laravel-based web application that integrates Gemini AI to generate personalized tutoring sessions, adaptive quizzes, and automated evaluations while incorporating Malang cultural elements into mathematics learning.",
+
+            "impact": "Successfully implemented in a classroom of 25 students, achieving an N-Gain score of 0.92 (High Category) with a 97% media validity score, demonstrating significant improvement in students' understanding of permutation and combination concepts.",
+
+            "engineering_decisions": [
+                "Integrated Generative AI as an educational assistant instead of replacing the teacher's role.",
+                "Designed modular AI services to separate business logic from AI interactions.",
+                "Implemented AI-generated quizzes with automatic evaluation to provide immediate learning feedback.",
+                "Built the application as a full-stack system to ensure seamless interaction between educational content, AI services, and user management."
+            ],
+
+            "challenges": [
+                "Designing AI interactions that remain educational rather than simply providing answers.",
+                "Balancing personalization with curriculum consistency.",
+                "Integrating AI features into a traditional web application architecture."
+            ],
+
+            "lessons_learned": [
+                "AI creates the greatest educational value when supporting, rather than replacing, the learning process.",
+                "Good educational systems require thoughtful UX design as much as strong AI capabilities.",
+                "Personalization significantly improves student engagement when implemented carefully."
+            ],
+
+            "future_improvements": [
+                "Learning analytics dashboard.",
+                "Multi-subject support.",
+                "Student progress prediction.",
+                "Teacher AI analytics.",
+                "Voice-based AI tutoring."
+            ],
+
+            "tech_stack": [
+                "Laravel 11",
+                "PHP",
+                "MySQL",
+                "Tailwind CSS",
+                "Gemini API"
+            ],
+
+            "features": [
+                "AI Learning Assistant",
+                "Adaptive Quiz Generation",
+                "Automatic Answer Evaluation",
+                "Personalized Learning",
+                "Student Progress Management",
+                "Teacher Dashboard"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Student",
+                "Learning Module",
+                "Gemini AI",
+                "Adaptive Quiz",
+                "Evaluation Engine",
+                "Teacher Dashboard"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "",
+                "users": "25 students",
+                "other": [
+                "N-Gain Score: 0.92 (High)",
+                "Media Validity: 97%",
+                "Successfully tested by 3 evaluators"
+                ]
+            },
+
+            "links": {
+                "github": "https://github.com/FaizAlfarisi/malika",
+                "demo": "",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/malika/cover.webp",
+                "architecture": "images/projects/malika/architecture.svg",
+                "gallery": [
+                "images/projects/malika/dashboard.webp",
+                "images/projects/malika/learning.webp",
+                "images/projects/malika/quiz.webp"
+                ]
+            }
+        },
+        {
+            "id": "aerial-house-detection",
+
+            "priority": 6,
+
+            "title": "Aerial House Detection for Location Intelligence",
+
+            "slug": "aerial-house-detection",
+
+            "featured": false,
+
+            "category": "Computer Vision",
+
+            "domains": [
+                "Computer Vision",
+                "Object Detection",
+                "Geospatial AI",
+                "Applied AI"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Active Development",
+
+            "year": 2026,
+
+            "tagline": "A computer vision system for detecting residential buildings from aerial imagery to support business location analysis.",
+
+            "summary": "Contributing to the development of a computer vision pipeline that detects and counts residential buildings from aerial imagery, enabling location intelligence for business feasibility analysis.",
+
+            "problem": "Estimating residential density traditionally requires manual surveys, making location analysis expensive, slow, and difficult to scale.",
+
+            "solution": "Prepared and curated large-scale aerial image datasets while contributing to the object detection pipeline using YOLOv8. The system estimates residential density within configurable geographic areas to support business decision-making.",
+
+            "impact": "Successfully annotated more than 5,000 aerial images and contributed to a model achieving approximately 91% detection accuracy.",
+
+            "engineering_decisions": [
+                "Built a custom dataset by combining publicly available aerial imagery with manually collected data.",
+                "Established annotation guidelines to maintain dataset consistency across varying image resolutions and perspectives.",
+                "Focused on improving data quality to increase model robustness against different roof colors, shapes, and scales."
+            ],
+
+            "challenges": [
+                "High visual variation between residential buildings.",
+                "Differences in image resolution and acquisition altitude.",
+                "Occlusion and dense urban environments."
+            ],
+
+            "lessons_learned": [
+                "High-quality datasets are often more valuable than increasingly complex model architectures.",
+                "Consistent annotation standards significantly improve model reliability.",
+                "Geospatial computer vision introduces challenges beyond conventional object detection."
+            ],
+
+            "future_improvements": [
+                "Instance segmentation.",
+                "Building footprint estimation.",
+                "Population estimation.",
+                "GIS integration.",
+                "Multi-scale object detection."
+            ],
+
+            "tech_stack": [
+                "Python",
+                "YOLOv8",
+                "Ultralytics",
+                "Roboflow",
+                "OpenCV"
+            ],
+
+            "features": [
+                "Aerial House Detection",
+                "Building Counting",
+                "Dataset Annotation Pipeline",
+                "Location Intelligence",
+                "Object Detection"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Aerial Images",
+                "Annotation",
+                "YOLOv8",
+                "Inference",
+                "House Counting",
+                "Business Analysis"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "91%",
+                "performance": "",
+                "dataset": "5,000+ manually annotated aerial images",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "",
+                "demo": "",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/aerial-house-detection/cover.webp",
+                "architecture": "images/projects/aerial-house-detection/architecture.svg",
+                "gallery": [
+                "images/projects/aerial-house-detection/dataset.webp",
+                "images/projects/aerial-house-detection/detection.webp",
+                "images/projects/aerial-house-detection/result.webp"
+                ]
+            }
+        },
+        {
+            "id": "sierte",
+
+            "priority": 7,
+
+            "title": "SieR-Te School Information System",
+
+            "slug": "sierte-school-information-system",
+
+            "featured": false,
+
+            "category": "Backend System",
+
+            "domains": [
+                "Backend Engineering",
+                "REST API",
+                "Information System"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Completed",
+
+            "year": 2025,
+
+            "tagline": "A scalable backend system powering a modern school information management platform.",
+
+            "summary": "Developed the backend architecture for a school information system from scratch, providing secure REST APIs to support student management, attendance, scheduling, academic journals, and classroom administration.",
+
+            "problem": "Schools require centralized digital systems to manage academic activities efficiently while supporting multiple user roles such as administrators, teachers, students, and parents.",
+
+            "solution": "Designed the relational database schema and implemented a modular backend using Go Fiber, GORM, and PostgreSQL with JWT authentication and role-based access control.",
+
+            "impact": "Delivered 50+ RESTful API endpoints covering core academic modules while establishing a scalable backend architecture for future mobile application integration.",
+
+            "engineering_decisions": [
+                "Designed the relational database schema before API implementation to maintain data consistency.",
+                "Implemented JWT authentication and Role-Based Access Control (RBAC) to support multiple user roles securely.",
+                "Applied pagination and modular API design to improve maintainability and scalability.",
+                "Structured the project following clean REST API principles for easier frontend integration."
+            ],
+
+            "challenges": [
+                "Designing a relational database with multiple interconnected academic entities.",
+                "Managing authorization rules across different user roles.",
+                "Maintaining API consistency while multiple modules were developed simultaneously."
+            ],
+
+            "lessons_learned": [
+                "Database design has a significant impact on long-term backend maintainability.",
+                "Well-designed API contracts simplify frontend collaboration.",
+                "Planning system architecture early reduces technical debt during implementation."
+            ],
+
+            "future_improvements": [
+                "API versioning.",
+                "Redis caching.",
+                "Notification service.",
+                "Microservice migration.",
+                "Comprehensive automated testing."
+            ],
+
+            "tech_stack": [
+                "Go",
+                "Fiber",
+                "GORM",
+                "PostgreSQL",
+                "JWT",
+                "GitHub",
+                "Postman"
+            ],
+
+            "features": [
+                "Authentication & RBAC",
+                "User Management",
+                "Class Management",
+                "Subject Management",
+                "Attendance Management",
+                "Daily Learning Journal",
+                "REST API"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Client",
+                "REST API",
+                "Authentication",
+                "Business Logic",
+                "PostgreSQL"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "",
+                "users": "",
+                "other": [
+                "50+ REST API endpoints",
+                "Designed relational database from scratch"
+                ]
+            },
+
+            "links": {
+                "github": "",
+                "demo": "https://documenter.getpostman.com/view/36187637/2sAYkDN1ET#36faa2a2-cc71-4865-a1b4-863f9a1d928c",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/sierte/cover.webp",
+                "architecture": "images/projects/sierte/architecture.svg",
+                "gallery": [
+                "images/projects/sierte/api.webp",
+                "images/projects/sierte/database.webp"
+                ]
+            }
+        },
+        {
+            "id": "kampus-sehat",
+
+            "priority": 8,
+
+            "title": "Kampus Sehat",
+
+            "slug": "kampus-sehat",
+
+            "featured": false,
+
+            "category": "Web Application",
+
+            "domains": [
+                "Full-Stack Development",
+                "Healthcare",
+                "Web Development"
+            ],
+
+            "complexity": "advanced",
+
+            "status": "Completed",
+
+            "year": 2025,
+
+            "tagline": "A university healthcare platform that simplifies medical service and event reservations.",
+
+            "summary": "Led the end-to-end development of a healthcare web platform for a university research project, providing online appointment booking, health event registration, and administrative management.",
+
+            "problem": "Students often rely on manual procedures to access campus healthcare services and health-related events, resulting in inefficient administration and limited accessibility.",
+
+            "solution": "Developed a full-stack web application using Laravel, MySQL, and Tailwind CSS, implementing appointment scheduling, event booking, authentication, and an administrative dashboard.",
+
+            "impact": "Delivered a centralized digital platform that streamlines healthcare service management and supports future expansion for student self-service features.",
+
+            "engineering_decisions": [
+                "Designed a modular Laravel architecture to simplify future feature expansion.",
+                "Built reusable CRUD modules to accelerate development.",
+                "Designed a normalized relational database to support appointment scheduling and event management.",
+                "Worked directly with the client throughout requirement gathering and development."
+            ],
+
+            "challenges": [
+                "Translating research requirements into a usable software product.",
+                "Designing scheduling logic for appointments and events.",
+                "Balancing development speed with maintainable code."
+            ],
+
+            "lessons_learned": [
+                "Requirement clarification is as important as implementation.",
+                "Simple user experience often requires careful backend design.",
+                "Client communication significantly influences project success."
+            ],
+
+            "future_improvements": [
+                "Student portal.",
+                "Medical history management.",
+                "Notification system.",
+                "Mobile application integration."
+            ],
+
+            "tech_stack": [
+                "Laravel",
+                "PHP",
+                "MySQL",
+                "Tailwind CSS"
+            ],
+
+            "features": [
+                "Healthcare Appointment Booking",
+                "Health Event Registration",
+                "Admin Dashboard",
+                "Authentication",
+                "CRUD Management"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "User",
+                "Laravel",
+                "Business Logic",
+                "MySQL",
+                "Admin Dashboard"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "",
+                "demo": "https://kampus-sehat.com/",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/kampus-sehat/cover.webp",
+                "architecture": "images/projects/kampus-sehat/architecture.svg",
+                "gallery": [
+                "images/projects/kampus-sehat/home.webp",
+                "images/projects/kampus-sehat/dashboard.webp",
+                "images/projects/kampus-sehat/booking.webp",
+                "images/projects/kampus-sehat/article.webp"
+                ]
+            }
+        },
+        {
+            "id": "bisindo-yolov8",
+
+            "priority": 9,
+
+            "title": "BISINDO Real-Time Detection",
+
+            "slug": "bisindo-real-time-detection",
+
+            "featured": false,
+
+            "category": "Computer Vision",
+
+            "domains": [
+                "Computer Vision",
+                "Object Detection",
+                "Deep Learning"
+            ],
+
+            "complexity": "intermediate",
+
+            "status": "Completed",
+
+            "year": 2024,
+
+            "tagline": "A real-time BISINDO alphabet detection system powered by YOLOv8.",
+
+            "summary": "Developed a real-time BISINDO alphabet detection system using the YOLOv8 object detection architecture to recognize hand gestures directly from live camera input.",
+
+            "problem": "Most BISINDO recognition research focuses on offline evaluation rather than real-time interaction, limiting its practicality for everyday communication.",
+
+            "solution": "Built a real-time detection pipeline using YOLOv8 capable of recognizing BISINDO alphabet gestures directly from webcam input with low-latency inference.",
+
+            "impact": "Demonstrated the feasibility of deploying object detection models for interactive sign language recognition and became the foundation for further research on BISINDO generalization.",
+
+            "engineering_decisions": [
+                "Selected YOLOv8 to achieve real-time inference performance.",
+                "Built a custom training dataset tailored for BISINDO alphabet detection.",
+                "Focused on balancing inference speed with recognition accuracy."
+            ],
+
+            "challenges": [
+                "Maintaining stable detection under varying lighting conditions.",
+                "Handling gesture similarity between multiple BISINDO characters.",
+                "Collecting sufficiently diverse training samples."
+            ],
+
+            "lessons_learned": [
+                "Real-time deployment introduces challenges beyond offline evaluation.",
+                "Dataset diversity significantly influences detection robustness.",
+                "Inference speed is equally important as model accuracy for interactive applications."
+            ],
+
+            "future_improvements": [
+                "Sentence-level BISINDO recognition.",
+                "Temporal gesture modeling.",
+                "MediaPipe-assisted hand tracking.",
+                "Mobile deployment."
+            ],
+
+            "tech_stack": [
+                "Python",
+                "YOLOv8",
+                "PyTorch",
+                "OpenCV",
+                "Ultralytics"
+            ],
+
+            "features": [
+                "Real-Time Detection",
+                "Live Webcam Inference",
+                "Custom BISINDO Dataset",
+                "Object Detection"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Webcam",
+                "YOLOv8",
+                "Bounding Box Detection",
+                "Gesture Classification",
+                "Visualization"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "Real-time inference",
+                "dataset": "",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "",
+                "demo": "",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/bisindo-yolov8/cover.webp",
+                "architecture": "images/projects/bisindo-yolov8/architecture.svg",
+                "gallery": [
+                "images/projects/bisindo-yolov8/demo.webp",
+                "images/projects/bisindo-yolov8/detection.webp",
+                "images/projects/bisindo-yolov8/training.webp"
+                ]
+            }
+        },
+        {
+            "id": "mushroom-classification",
+
+            "priority": 10,
+
+            "title": "Mushroom Classification",
+
+            "slug": "mushroom-classification",
+
+            "featured": false,
+
+            "category": "Machine Learning",
+
+            "domains": [
+                "Machine Learning",
+                "Classification",
+                "Data Science"
+            ],
+
+            "complexity": "intermediate",
+
+            "status": "Completed",
+
+            "year": 2024,
+
+            "tagline": "A machine learning application for classifying edible and poisonous mushrooms.",
+
+            "summary": "Developed a supervised machine learning application that classifies mushrooms as edible or poisonous through exploratory data analysis, feature preprocessing, model training, and web deployment.",
+
+            "problem": "Correctly distinguishing edible and poisonous mushrooms is challenging for non-experts and requires reliable classification based on observable characteristics.",
+
+            "solution": "Performed exploratory data analysis, feature preprocessing, and implemented a K-Nearest Neighbors (KNN) classifier before deploying the prediction model through a Flask-based web application.",
+
+            "impact": "Demonstrated a complete end-to-end machine learning workflow from data exploration and model development to deployment as an interactive web application.",
+
+            "engineering_decisions": [
+                "Conducted exploratory data analysis before model selection to better understand feature distributions.",
+                "Selected KNN as a strong baseline due to the categorical nature of the dataset.",
+                "Separated prediction logic from the user interface using Flask."
+            ],
+
+            "challenges": [
+                "Handling categorical feature encoding.",
+                "Selecting appropriate hyperparameters for KNN.",
+                "Designing a simple and intuitive prediction interface."
+            ],
+
+            "lessons_learned": [
+                "Good data preprocessing significantly influences model performance.",
+                "Model interpretability is valuable for educational machine learning projects.",
+                "Deployment is an essential part of the machine learning lifecycle."
+            ],
+
+            "future_improvements": [
+                "Compare additional classification algorithms.",
+                "Feature importance analysis.",
+                "Image-based mushroom classification.",
+                "Cloud deployment."
+            ],
+
+            "tech_stack": [
+                "Python",
+                "Scikit-learn",
+                "Flask",
+                "Pandas",
+                "NumPy",
+                "Matplotlib"
+            ],
+
+            "features": [
+                "Exploratory Data Analysis",
+                "KNN Classification",
+                "Prediction API",
+                "Web Interface"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Dataset",
+                "EDA",
+                "Feature Engineering",
+                "KNN Model",
+                "Flask API",
+                "Prediction"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "Kaggle Mushroom Dataset",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "https://github.com/FaizAlfarisi/MushroomClassification",
+                "demo": "https://mushroom-classifier-w4yj.onrender.com/",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/mushroom-classification/cover.webp",
+                "architecture": "images/projects/mushroom-classification/architecture.svg",
+                "gallery": [
+                "images/projects/mushroom-classification/eda.webp",
+                "images/projects/mushroom-classification/matrix.webp",
+                "images/projects/mushroom-classification/result.webp"
+                ]
+            }
+        },
+        {
+            "id": "bank-fraud-eda",
+
+            "priority": 11,
+
+            "title": "Bank Transaction Fraud Analysis",
+
+            "slug": "bank-transaction-fraud-analysis",
+
+            "featured": false,
+
+            "category": "Data Science",
+
+            "domains": [
+                "Data Analysis",
+                "Machine Learning",
+                "Exploratory Data Analysis"
+            ],
+
+            "complexity": "intermediate",
+
+            "status": "Completed",
+
+            "year": 2024,
+
+            "tagline": "Exploring banking transaction patterns to uncover potential fraudulent behavior using data analysis and clustering.",
+
+            "summary": "Performed exploratory data analysis on banking transaction data to understand customer transaction behavior and identify hidden patterns using unsupervised machine learning techniques.",
+
+            "problem": "Fraudulent financial transactions are often difficult to identify through manual inspection due to the large volume and complexity of transaction data.",
+
+            "solution": "Conducted comprehensive exploratory data analysis, feature visualization, and applied K-Means clustering to group transaction patterns and identify potential anomalies that may indicate fraudulent behavior.",
+
+            "impact": "Demonstrated how data exploration combined with unsupervised learning can reveal behavioral patterns that support fraud investigation and decision-making.",
+
+            "engineering_decisions": [
+                "Performed exploratory analysis before modeling to better understand feature distributions and anomalies.",
+                "Applied K-Means clustering as an initial unsupervised approach for behavioral segmentation.",
+                "Focused on visual interpretation to communicate findings effectively."
+            ],
+
+            "challenges": [
+                "Understanding high-dimensional financial transaction data.",
+                "Selecting meaningful features for clustering.",
+                "Interpreting unsupervised clustering results without labeled fraud data."
+            ],
+
+            "lessons_learned": [
+                "Exploratory Data Analysis is often the most important stage of a data science project.",
+                "Clustering provides behavioral insights rather than definitive fraud predictions.",
+                "Data visualization significantly improves analytical decision-making."
+            ],
+
+            "future_improvements": [
+                "Anomaly Detection models.",
+                "Isolation Forest.",
+                "DBSCAN clustering.",
+                "Supervised fraud classification.",
+                "Interactive analytics dashboard."
+            ],
+
+            "tech_stack": [
+                "Python",
+                "Pandas",
+                "NumPy",
+                "Matplotlib",
+                "Scikit-learn"
+            ],
+
+            "features": [
+                "Exploratory Data Analysis",
+                "Data Visualization",
+                "K-Means Clustering",
+                "Behavior Analysis"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Transaction Dataset",
+                "EDA",
+                "Feature Engineering",
+                "K-Means",
+                "Cluster Analysis",
+                "Visualization"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "",
+                "demo": "",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/bank-fraud-eda/cover.webp",
+                "architecture": "images/projects/bank-fraud-eda/architecture.svg",
+                "gallery": [
+                "images/projects/bank-fraud-eda/visualization.webp"
+                ]
+            }
+        },
+        {
+            "id": "singosari-fitness",
+
+            "priority": 12,
+
+            "title": "Singosari Fitness Management System",
+
+            "slug": "singosari-fitness-management-system",
+
+            "featured": false,
+
+            "category": "Web Application",
+
+            "domains": [
+                "Backend Development",
+                "Web Development",
+                "Information System"
+            ],
+
+            "complexity": "intermediate",
+
+            "status": "Completed",
+
+            "year": 2023,
+
+            "tagline": "A web-based fitness center management system designed to streamline membership and operational management.",
+
+            "summary": "Developed the backend of a fitness center management system, covering database design, business logic implementation, and CRUD functionalities to support daily operational activities.",
+
+            "problem": "Fitness centers often rely on manual administration, making membership management and operational processes inefficient.",
+
+            "solution": "Designed the relational database, implemented backend logic, and developed management modules supporting core operational workflows using PHP and MySQL.",
+
+            "impact": "Delivered a centralized management system that digitizes administrative workflows and simplifies day-to-day operations.",
+
+            "engineering_decisions": [
+                "Started development from requirement analysis and database design before implementation.",
+                "Applied relational database normalization to maintain data consistency.",
+                "Separated business logic from presentation for easier maintenance."
+            ],
+
+            "challenges": [
+                "Translating business requirements into database structures.",
+                "Maintaining consistency across interconnected CRUD modules.",
+                "Designing flexible data relationships for future feature expansion."
+            ],
+
+            "lessons_learned": [
+                "Strong database design simplifies future development.",
+                "Understanding business processes is essential before writing code.",
+                "Maintainable CRUD systems depend on clean architecture rather than complex features."
+            ],
+
+            "future_improvements": [
+                "Membership payment integration.",
+                "Online class booking.",
+                "Attendance tracking.",
+                "Analytics dashboard."
+            ],
+
+            "tech_stack": [
+                "PHP",
+                "MySQL",
+                "HTML",
+                "CSS"
+            ],
+
+            "features": [
+                "Member Management",
+                "CRUD Operations",
+                "Database Management",
+                "Administrative Dashboard"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "User",
+                "Web Interface",
+                "Business Logic",
+                "MySQL Database"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "",
+                "demo": "",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/singosari-fitness/cover.webp",
+                "architecture": "images/projects/singosari-fitness/architecture.svg",
+                "gallery": [
+                "images/projects/singosari-fitness/database.webp"
+                ]
+            }
+        },
+        {
+            "id": "kacang-pedes-singo",
+
+            "priority": 13,
+
+            "title": "Kacang Pedes Singo E-Commerce",
+
+            "slug": "kacang-pedes-singo-ecommerce",
+
+            "featured": false,
+
+            "category": "Web Application",
+
+            "domains": [
+                "Web Development",
+                "E-Commerce",
+                "Backend Development"
+            ],
+
+            "complexity": "beginner",
+
+            "status": "Completed",
+
+            "year": 2023,
+
+            "tagline": "A web-based e-commerce platform developed to digitize product sales for a local snack business.",
+
+            "summary": "Developed an e-commerce website for a local food business, providing product catalog management, customer transactions, and administrative features to support online sales.",
+
+            "problem": "Small businesses often lack an online platform to efficiently promote products and manage digital sales.",
+
+            "solution": "Built a complete e-commerce website using PHP and MySQL, implementing product management, shopping workflows, and administrative functionalities.",
+
+            "impact": "Demonstrated fundamental web application development skills through the implementation of a complete CRUD-based e-commerce system.",
+
+            "engineering_decisions": [
+                "Designed a relational database to support products, customers, and transactions.",
+                "Separated administrative features from customer-facing pages.",
+                "Focused on building a maintainable CRUD-based architecture."
+            ],
+
+            "challenges": [
+                "Designing transaction workflows.",
+                "Managing relationships between products and orders.",
+                "Building a complete web application from scratch."
+            ],
+
+            "lessons_learned": [
+                "Database design is fundamental to e-commerce applications.",
+                "Simple and maintainable architecture is preferable for small business systems.",
+                "Understanding business requirements is as important as implementation."
+            ],
+
+            "future_improvements": [
+                "Payment gateway integration.",
+                "Order tracking.",
+                "Inventory management.",
+                "Responsive UI redesign."
+            ],
+
+            "tech_stack": [
+                "PHP",
+                "MySQL",
+                "HTML",
+                "CSS"
+            ],
+
+            "features": [
+                "Product Catalog",
+                "Shopping Cart",
+                "Transaction Management",
+                "Admin Dashboard",
+                "CRUD Operations"
+            ],
+
+            "architecture": {
+                "nodes": [
+                "Customer",
+                "Web Application",
+                "Business Logic",
+                "MySQL Database"
+                ]
+            },
+
+            "metrics": {
+                "accuracy": "",
+                "performance": "",
+                "dataset": "",
+                "users": "",
+                "other": []
+            },
+
+            "links": {
+                "github": "",
+                "demo": "",
+                "paper": ""
+            },
+
+            "assets": {
+                "cover": "images/projects/kacang-pedes-singo/cover.webp",
+                "architecture": "images/projects/kacang-pedes-singo/architecture.svg",
+                "gallery": [
+                "images/projects/kacang-pedes-singo/home.webp"
+                ]
+            }
+        }
+    ]
+}

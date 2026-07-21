@@ -1,0 +1,171 @@
+[
+  {
+    "id": "azure-ai-fundamentals",
+
+    "priority": 1,
+
+    "name": "Microsoft Certified: Azure AI Fundamentals",
+
+    "issuer": "Microsoft",
+
+    "issue_year": 2025,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Azure AI Services",
+      "Responsible AI"
+    ]
+  },
+
+  {
+    "id": "genai-fundamentals",
+
+    "priority": 2,
+
+    "name": "Generative AI Fundamentals",
+
+    "issuer": "Dicoding Indonesia",
+
+    "issue_year": 2025,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Generative AI",
+      "LLM",
+      "Prompt Engineering"
+    ]
+  },
+
+  {
+    "id": "ai-foundations",
+
+    "priority": 3,
+
+    "name": "AI Foundations",
+
+    "issuer": "Dicoding Indonesia",
+
+    "issue_year": 2025,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Artificial Intelligence",
+      "Machine Learning"
+    ]
+  },
+
+  {
+    "id": "practical-ai-productivity",
+
+    "priority": 4,
+
+    "name": "Practical AI for Productivity",
+
+    "issuer": "Dicoding Indonesia",
+
+    "issue_year": 2025,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Generative AI",
+      "AI Productivity"
+    ]
+  },
+
+  {
+    "id": "intro-machine-learning",
+
+    "priority": 5,
+
+    "name": "Introduction to Machine Learning",
+
+    "issuer": "Dicoding Indonesia",
+
+    "issue_year": 2024,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Machine Learning",
+      "Data Science"
+    ]
+  },
+
+  {
+    "id": "advanced-python",
+
+    "priority": 6,
+
+    "name": "Advanced Python",
+
+    "issuer": "Skilvul",
+
+    "issue_year": 2024,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Python"
+    ]
+  },
+
+  {
+    "id": "python-basics",
+
+    "priority": 7,
+
+    "name": "Python Basics",
+
+    "issuer": "Skilvul",
+
+    "issue_year": 2024,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Python"
+    ]
+  },
+
+  {
+    "id": "algorithm-data-structures-python",
+
+    "priority": 8,
+
+    "name": "Algorithm & Data Structures with Python",
+
+    "issuer": "Skilvul",
+
+    "issue_year": 2024,
+
+    "credential_id": "",
+
+    "credential_url": "",
+
+    "skills": [
+      "Algorithms",
+      "Data Structures",
+      "Python"
+    ]
+  }
+]

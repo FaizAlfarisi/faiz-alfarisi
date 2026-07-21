@@ -1,0 +1,130 @@
+[
+  {
+    "id": "ranajaya-fulltime",
+
+    "priority": 1,
+
+    "company": "PT Ranajaya Citaprasada Thani Indonesia",
+
+    "role": "Back End Developer",
+
+    "employment_type": "Full-time",
+
+    "location": "Malang, Indonesia",
+
+    "start_date": "2026-03",
+
+    "end_date": null,
+
+    "current": true,
+
+    "summary": "Develop backend services for business applications while contributing to internal AI initiatives involving large-scale computer vision datasets.",
+
+    "responsibilities": [
+      "Develop backend services using Go, GORM, PostgreSQL, and Redis for business applications.",
+      "Collaborate with cross-functional teams to design scalable REST APIs and relational database architectures.",
+      "Contribute to internal computer vision initiatives through large-scale aerial imagery dataset preparation and annotation using YOLOv8 workflows.",
+      "Support AI development by improving dataset quality and evaluation readiness for location intelligence systems."
+    ],
+
+    "tech_stack": [
+      "Go",
+      "Gin",
+      "GORM",
+      "PostgreSQL",
+      "Redis",
+      "Git",
+      "Postman",
+      "YOLOv8",
+      "Roboflow"
+    ]
+  },
+
+  {
+    "id": "ranajaya-intern",
+
+    "priority": 2,
+
+    "company": "PT Ranajaya Citaprasada Thani Indonesia",
+
+    "role": "Back End Developer Intern",
+
+    "employment_type": "Internship",
+
+    "location": "Malang, Indonesia",
+
+    "start_date": "2025-05",
+
+    "end_date": "2026-03",
+
+    "current": false,
+
+    "summary": "Built backend systems for multiple business applications using Go while collaborating within Agile development teams.",
+
+    "responsibilities": [
+      "Designed relational database schemas and developed 50+ RESTful API endpoints for multiple production-oriented business systems.",
+      "Implemented authentication, JWT authorization, RBAC, pagination, and modular CRUD services using Go, Gin, GORM, and PostgreSQL.",
+      "Collaborated in Agile development through sprint planning, daily stand-ups, weekly reviews, Git-based workflows, and code reviews.",
+      "Optimized backend performance using Redis caching while contributing to scalable and maintainable application architecture."
+    ],
+
+    "tech_stack": [
+      "Go",
+      "Gin",
+      "GORM",
+      "PostgreSQL",
+      "Redis",
+      "JWT",
+      "Git",
+      "Postman"
+    ],
+
+    "projects": [
+      "Goumroh.id",
+      "Koperasi MinaJaya"
+    ]
+  },
+
+  {
+    "id": "sierte-intern",
+
+    "priority": 3,
+
+    "company": "Back-End Web Development Internship",
+
+    "role": "Back End Developer Intern",
+
+    "employment_type": "Internship",
+
+    "location": "Malang, Indonesia",
+
+    "start_date": "2025-02",
+
+    "end_date": "2025-05",
+
+    "current": false,
+
+    "summary": "Developed the backend architecture of a school information system from scratch during an internship program.",
+
+    "responsibilities": [
+      "Designed the relational database schema and developed backend services for a school information system using Go Fiber and PostgreSQL.",
+      "Implemented authentication, JWT authorization, RBAC, attendance management, class management, subject management, and daily learning journal modules.",
+      "Built 50+ RESTful API endpoints following clean API design principles to support future frontend and mobile integration.",
+      "Collaborated closely with teammates throughout system analysis, database design, implementation, and API testing."
+    ],
+
+    "tech_stack": [
+      "Go",
+      "Fiber",
+      "GORM",
+      "PostgreSQL",
+      "JWT",
+      "Git",
+      "Postman"
+    ],
+
+    "projects": [
+      "SieR-Te"
+    ]
+  }
+]

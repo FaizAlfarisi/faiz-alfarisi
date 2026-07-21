@@ -1,0 +1,71 @@
+[
+  {
+    "id": "building-ragnamok",
+
+    "priority": 1,
+
+    "title": "Building a Privacy-First Local RAG System",
+
+    "slug": "building-a-privacy-first-local-rag-system",
+
+    "status": "coming-soon",
+
+    "category": "AI Engineering"
+  },
+
+  {
+    "id": "multivector-retrieval",
+
+    "priority": 2,
+
+    "title": "Why I Chose Multi-Vector Retrieval",
+
+    "slug": "why-i-chose-multi-vector-retrieval",
+
+    "status": "coming-soon",
+
+    "category": "Retrieval-Augmented Generation"
+  },
+
+  {
+    "id": "engineering-decisions-rag",
+
+    "priority": 3,
+
+    "title": "Engineering Decisions Behind RAGnamok",
+
+    "slug": "engineering-decisions-behind-ragnamok",
+
+    "status": "coming-soon",
+
+    "category": "Software Engineering"
+  },
+
+  {
+    "id": "improving-generalization",
+
+    "priority": 4,
+
+    "title": "Improving Model Generalization with Realistic Data Augmentation",
+
+    "slug": "improving-model-generalization",
+
+    "status": "coming-soon",
+
+    "category": "Machine Learning"
+  },
+
+  {
+    "id": "from-model-to-system",
+
+    "priority": 5,
+
+    "title": "Building Intelligent Systems, Not Just AI Models",
+
+    "slug": "building-intelligent-systems",
+
+    "status": "coming-soon",
+
+    "category": "Applied AI"
+  }
+]

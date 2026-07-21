@@ -1,0 +1,65 @@
+{
+  "sections": [
+    {
+      "id": "artificial-intelligence",
+      "title": "Artificial Intelligence",
+      "description": "Building intelligent systems using machine learning, computer vision, NLP, and modern LLM technologies.",
+
+      "items": [
+        "Python",
+        "Machine Learning",
+        "Deep Learning",
+        "Computer Vision",
+        "Natural Language Processing",
+        "Retrieval-Augmented Generation (RAG)",
+        "Generative AI",
+        "Prompt Engineering",
+        "PyTorch",
+        "Scikit-learn",
+        "LangChain",
+        "MediaPipe",
+        "Ultralytics YOLO",
+        "FastAPI",
+        "Flask",
+        "Model Evaluation",
+        "Data Annotation",
+        "Data Augmentation",
+        "Ollama"
+      ]
+    },
+
+    {
+      "id": "backend-engineering",
+      "title": "Backend Engineering",
+      "description": "Designing scalable backend services, APIs, and databases for production-ready applications.",
+
+      "items": [
+        "Go",
+        "PHP",
+        "Gin",
+        "Fiber",
+        "Laravel",
+        "GORM",
+        "REST API",
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "Database Design",
+        "System Architecture",
+        "Docker",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Linux"
+      ]
+    }
+  ],
+
+  "currently_exploring": [
+    "AI Agents",
+    "Model Context Protocol (MCP)",
+    "Agentic RAG",
+    "Vector Databases",
+    "AI System Architecture"
+  ]
+}

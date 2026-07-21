@@ -1,0 +1,44 @@
+[
+  {
+    "id": "universitas-negeri-malang",
+
+    "priority": 1,
+
+    "institution": "Universitas Negeri Malang",
+
+    "degree": "Bachelor of Mathematics",
+
+    "field": "Mathematics",
+
+    "location": "Malang, Indonesia",
+
+    "start_year": 2022,
+
+    "end_year": 2026,
+
+    "gpa": "3.78/4.00",
+
+    "summary": "Focused on applied mathematics, machine learning, optimization, and software development through academic research and engineering projects.",
+
+    "thesis": {
+      "title": "Enhancing Generalization of BISINDO Gesture Recognition Using Realistic 3D Keypoint Augmentation",
+      "status": "Completed",
+      "domains": [
+        "Machine Learning",
+        "Computer Vision",
+        "Applied AI"
+      ],
+      "highlights": [
+        "Improved cross-domain F1-Score by 22.35%.",
+        "Designed a realistic 3D keypoint augmentation framework.",
+        "Developed a complete machine learning pipeline using MediaPipe and PyTorch."
+      ]
+    },
+
+    "activities": [
+      "Head of Machine Learning / Artificial Intelligence Division, GDGoC Universitas Negeri Malang",
+      "Speaker, Build With AI",
+      "ML/AI Study Jam Facilitator"
+    ]
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "name": {
+    "full": "Muhammad Fa'iz Alfarisi",
+    "display": "Fa'iz Alfarisi"
+  },
+
+  "headline": "Building Intelligent Systems with AI & Software Engineering",
+
+  "tagline": "Turning AI ideas into practical software.",
+
+  "status": {
+    "label": "Available for Opportunities",
+    "open_to_work": true
+  },
+
+  "location": {
+    "city": "Pasuruan",
+    "province": "East Java",
+    "country": "Indonesia"
+  },
+
+  "bio": {
+    "short": "Backend Developer with a Mathematics background, passionate about building intelligent systems that combine AI, software engineering, and real-world usability.",
+
+    "long": "I'm a Backend Developer with a Bachelor's degree in Mathematics who enjoys turning artificial intelligence into practical software. My work spans computer vision, retrieval-augmented generation (RAG), optimization algorithms, and backend engineering. Rather than focusing solely on machine learning models, I'm interested in designing complete systems—from data preparation and model development to APIs and user-facing applications. I'm currently exploring Applied AI while continuing to build reliable backend services and intelligent software."
+  },
+
+  "mission": "Build intelligent software that solves real-world problems through thoughtful engineering.",
+
+  "website": {
+    "url": "https://faiz-alfarisi.vercel.app",
+    "label": "Portfolio"
+  },
+
+  "resume": {
+    "download_name": "cv.pdf"
+  },
+
+  "photo": {
+    "path": "images/formal_photo.jpg"
+  },
+
+  "logo": {
+    "path": "images/logo.png"
+  },
+
+  "contact": {
+    "email": "faizalfarisi67@gmail.com",
+    "phone": ""
+  },
+
+  "socials": {
+    "github": "https://github.com/FaizAlfarisi",
+    "linkedin": "https://www.linkedin.com/in/mfaizalfarisi/",
+    "upwork": "https://www.upwork.com/freelancers/~0133e1996b1e5eabb7?mp_source=share"
+  },
+
+  "career": {
+    "current_role": "Backend Developer",
+    "focus": [
+      "Applied AI",
+      "Computer Vision",
+      "Retrieval-Augmented Generation",
+      "Backend Engineering"
+    ],
+    "currently_exploring": [
+    "Local RAG Systems",
+    "Multimodal AI",
+    "LLM Engineering",
+    "AI System Architecture"
+    ]
+  },
+
+  "cta": {
+    "primary": {
+      "title": "Let's Build Something Useful",
+      "description": "Whether you have an AI idea, need backend development, or simply want to discuss an interesting engineering problem, I'd love to hear from you."
+    }
+  }
+}

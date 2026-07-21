@@ -1,0 +1,31 @@
+{
+  "email": {
+    "label": "Email",
+    "value": "faizalfarisi67@gmail.com",
+    "url": "mailto:faizalfarisi67@gmail.com"
+  },
+
+  "linkedin": {
+    "label": "LinkedIn",
+    "value": "Muhammad Fa'iz Alfarisi",
+    "url": "https://linkedin.com/in/mfaizalfarisi"
+  },
+
+  "github": {
+    "label": "GitHub",
+    "value": "FaizAlfarisi",
+    "url": "https://github.com/FaizAlfarisi"
+  },
+
+  "upwork": {
+    "label": "Upwork",
+    "value": "Fa'iz Alfarisi",
+    "url": "https://www.upwork.com/freelancers/~0133e1996b1e5eabb7?mp_source=share"
+  },
+
+  "portfolio": {
+    "label": "Portfolio",
+    "value": "faiz-alfarisi.vercel.app",
+    "url": "https://faiz-alfarisi.vercel.app"
+  }
+}

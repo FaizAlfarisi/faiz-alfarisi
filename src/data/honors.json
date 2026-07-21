@@ -1,0 +1,51 @@
+[
+  {
+    "id": "sic-finalist",
+
+    "priority": 1,
+
+    "title": "Top 10 Finalist",
+
+    "organization": "Samsung Innovation Campus Batch 5",
+
+    "year": 2024,
+
+    "description": "Selected as one of the Top 10 teams out of 7,590 participants for developing an AIoT-based laboratory safety system integrating Computer Vision and IoT.",
+
+    "type": "Award"
+  },
+
+  {
+    "id": "pkm-amli",
+
+    "priority": 2,
+
+    "title": "2nd Place (Bronze Medal)",
+
+    "organization": "PKM AMLI 2025",
+
+    "year": 2025,
+
+    "description": "Awarded for developing MALIKA, an AI-powered adaptive learning platform integrating Generative AI into mathematics education.",
+
+    "type": "Award"
+  },
+
+  {
+    "id": "malika-copyright",
+
+    "priority": 3,
+
+    "title": "Software Copyright Registration",
+
+    "organization": "Directorate General of Intellectual Property, Indonesia",
+
+    "year": 2025,
+
+    "description": "Registered copyright for MALIKA: AI Adaptive Learning System and Ethnomathematics Learning Platform.",
+
+    "registration_number": "EC002025206900",
+
+    "type": "Intellectual Property"
+  }
+]
