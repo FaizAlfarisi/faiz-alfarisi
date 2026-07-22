@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     default: "Fa'iz Alfarisi - Building Intelligent Systems",
     template: "%s | Fa'iz Alfarisi",
   },
+  icons: {
+    icon: "/images/logo.png",
+  },
   description:
     "Backend Developer with a Mathematics background, building intelligent systems that combine AI, software engineering, and real-world usability.",
   keywords: [
