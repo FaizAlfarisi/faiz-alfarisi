@@ -21,6 +21,21 @@ export function formatDate(dateString: string): string {
 }
 
 /**
+ * Format a publish date for journal articles
+ */
+export function formatArticleDate(
+  dateString: string,
+  locale: "en-US" | "id-ID" = "en-US"
+): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
+/**
  * Format a date range (start - end)
  */
 export function formatDateRange(

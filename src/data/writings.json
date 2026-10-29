@@ -1,71 +1,49 @@
 [
   {
-    "id": "building-ragnamok",
-
+    "id": "bisindo-keypoint-augmentation",
     "priority": 1,
-
+    "title": "Penelitian Pengenalan Huruf BISINDO Tingkatkan Generalisasi Model melalui Augmentasi Keypoints 3D",
+    "slug": "bisindo-keypoint-augmentation",
+    "status": "published",
+    "category": "Machine Learning",
+    "excerpt": "Penelitian Universitas Negeri Malang menguji empat teknik augmentasi geometris pada keypoints 3D dan mencatat peningkatan F1-score dari 67,20% menjadi 89,55% pada evaluasi lintas domain.",
+    "author": "Muhammad Fa'iz Alfarisi",
+    "affiliation": "Universitas Negeri Malang",
+    "publishedAt": "2026-10-29",
+    "readingTime": 8,
+    "cover": "images/journal/bisindo-generalization/lead.png",
+    "paperUrl": "https://doi.org/10.15294/sji.v11i2.42221"
+  },
+  {
+    "id": "building-ragnamok",
+    "priority": 2,
     "title": "Building a Privacy-First Local RAG System",
-
     "slug": "building-a-privacy-first-local-rag-system",
-
     "status": "coming-soon",
-
     "category": "AI Engineering"
   },
-
   {
     "id": "multivector-retrieval",
-
-    "priority": 2,
-
+    "priority": 3,
     "title": "Why I Chose Multi-Vector Retrieval",
-
     "slug": "why-i-chose-multi-vector-retrieval",
-
     "status": "coming-soon",
-
     "category": "Retrieval-Augmented Generation"
   },
-
   {
     "id": "engineering-decisions-rag",
-
-    "priority": 3,
-
+    "priority": 4,
     "title": "Engineering Decisions Behind RAGnamok",
-
     "slug": "engineering-decisions-behind-ragnamok",
-
     "status": "coming-soon",
-
     "category": "Software Engineering"
   },
-
-  {
-    "id": "improving-generalization",
-
-    "priority": 4,
-
-    "title": "Improving Model Generalization with Realistic Data Augmentation",
-
-    "slug": "improving-model-generalization",
-
-    "status": "coming-soon",
-
-    "category": "Machine Learning"
-  },
-
   {
     "id": "from-model-to-system",
-
     "priority": 5,
-
     "title": "Building Intelligent Systems, Not Just AI Models",
-
     "slug": "building-intelligent-systems",
-
     "status": "coming-soon",
-
     "category": "Applied AI"
   }
 ]

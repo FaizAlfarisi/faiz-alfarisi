@@ -1,0 +1,167 @@
+<Figure
+  src="/images/journal/bisindo-generalization/lead.png"
+  alt="Representasi keypoints 3D tangan pada pengenalan huruf BISINDO"
+  width="1271"
+  height="719"
+  caption="Representasi keypoints 3D tangan menjadi fitur utama dalam penelitian pengenalan huruf BISINDO."
+  priority
+/>
+
+## Mengapa generalisasi menjadi tantangan?
+
+Teknologi *computer vision* memungkinkan sistem mengenali bentuk tangan melalui kamera. Tantangannya adalah mempertahankan performa ketika model menerima data dari orang atau perangkat yang berbeda.
+
+Tantangan tersebut penting dalam pengenalan huruf Bahasa Isyarat Indonesia (BISINDO). Bentuk tangan dapat berbeda antarindividu karena perbedaan proporsi jari, kebiasaan membentuk gestur, posisi tangan, serta sudut pengambilan gambar. Jika data pelatihan hanya mewakili sedikit variasi, model berisiko mempelajari karakteristik spesifik subjek, bukan pola gestur yang dapat diterapkan secara lebih luas.
+
+Penelitian berjudul **"Generalisasi Model Pengenalan Huruf BISINDO Menggunakan Augmentasi Data Keypoints 3D Berbasis Skenario Nyata"** menguji apakah variasi sintetis keypoints dapat membantu generalisasi. Fokusnya adalah pengenalan alfabet A–Z, bukan penerjemahan kata atau kalimat.
+
+## Dari citra tangan ke representasi keypoints 3D
+
+Penelitian menggunakan MediaPipe Hands untuk mengekstraksi landmark tangan dari citra. Setiap tangan direpresentasikan oleh 21 landmark. Representasi dua tangan menghasilkan 42 titik; setiap titik memiliki tiga koordinat, yaitu $x$, $y$, dan $z$. Dengan demikian, fitur gabungan terdiri atas 126 nilai koordinat.
+
+Sebelum digunakan untuk klasifikasi, koordinat dinormalisasi agar representasi lebih berfokus pada bentuk gestur daripada perbedaan posisi dan skala. Jika $\mathbf{p}_i$ merupakan koordinat landmark ke-$i$, $\mathbf{p}_0$ adalah koordinat wrist, dan $\mathbf{p}_5$ adalah koordinat index finger MCP, normalisasi yang dijelaskan dalam penelitian dapat ditulis sebagai:
+
+$$
+\mathbf{p}'_i = \frac{\mathbf{p}_i-\mathbf{p}_0}{\|\mathbf{p}_5-\mathbf{p}_0\|_2}
+$$
+
+Persamaan tersebut memusatkan koordinat terhadap wrist dan menggunakan jarak wrist–index MCP sebagai faktor skala. Vektor fitur kemudian menjadi masukan bagi model klasifikasi *Multi-Layer Perceptron* (MLP).
+
+<Figure
+  src="/images/journal/bisindo-generalization/pipeline.png"
+  alt="Diagram alur pemrosesan citra tangan menjadi prediksi huruf BISINDO"
+  width="841"
+  height="521"
+  caption="Alur pemrosesan fitur keypoints 3D untuk pengenalan huruf BISINDO."
+/>
+
+## Empat teknik augmentasi keypoints 3D
+
+Alih-alih mengubah piksel citra, penelitian ini memodifikasi koordinat keypoints secara geometris. Tujuannya memperkenalkan variasi posisi, proporsi, anatomi, dan perspektif sambil menjaga struktur gestur tetap masuk akal.
+
+### 1. Gaussian Jitter: mensimulasikan ketidakpastian posisi
+
+Gaussian Jitter menambahkan noise acak pada koordinat tiga dimensi setiap keypoint. Untuk titik $\mathbf{p}_i$, formulasi yang digunakan adalah:
+
+$$
+\mathbf{p}'_i = \mathbf{p}_i + \boldsymbol{\epsilon}_i
+$$
+
+dengan:
+
+$$
+\boldsymbol{\epsilon}_i \sim \mathcal{N}(\mathbf{0}, \sigma^2\mathbf{I}_3)
+$$
+
+Vektor $\boldsymbol{\epsilon}_i$ adalah noise tiga dimensi, $\sigma$ mengatur skalanya, dan $\mathbf{I}_3$ merupakan matriks identitas $3\times3$. Noise meniru ketidakpastian posisi akibat getaran tangan atau fluktuasi deteksi landmark. Intensitasnya perlu dikendalikan agar karakter huruf tidak berubah berlebihan.
+
+### 2. Anisotropic Scale: memvariasikan proporsi pada tiap sumbu
+
+Anisotropic Scale menerapkan faktor skala yang berbeda pada sumbu $x$, $y$, dan $z$. Persamaannya:
+
+$$
+\mathbf{p}'_i = \mathbf{S}\mathbf{p}_i
+$$
+
+dengan matriks skala:
+
+$$
+\mathbf{S} =
+\begin{bmatrix}
+s_x & 0 & 0\\
+0 & s_y & 0\\
+0 & 0 & s_z
+\end{bmatrix}
+$$
+
+Faktor $s_x$, $s_y$, dan $s_z$ mengatur perubahan tiap sumbu. Berbeda dari skala seragam, transformasi ini dapat menghasilkan variasi proporsi tangan yang lebih lebar atau ramping. Faktor skala perlu dibatasi agar geometri tetap masuk akal.
+
+### 3. Bone Length Scale: memvariasikan panjang segmen antarsendi
+
+Bone Length Scale berfokus pada panjang relatif segmen tangan. Setiap tulang direpresentasikan sebagai pasangan titik induk (*parent*) dan titik anak (*child*) dalam topologi landmark MediaPipe. Posisi titik anak setelah augmentasi dihitung sebagai:
+
+$$
+\mathbf{p}'_{\text{child}} =
+\mathbf{p}_{\text{parent}} +
+\alpha_{p,c}
+\left(
+\mathbf{p}_{\text{child}}-\mathbf{p}_{\text{parent}}
+\right)
+$$
+
+Parameter $\alpha_{p,c}$ adalah faktor skala segmen. Nilai di atas satu memperpanjang vektor segmen, sedangkan nilai di bawah satu memperpendeknya. Transformasi lokal ini ditujukan untuk memvariasikan panjang segmen sambil mempertahankan keterhubungan struktur antarsendi.
+
+### 4. Depth & Tilt Jitter: memvariasikan kedalaman dan kemiringan
+
+Teknik ini menggabungkan perubahan koordinat kedalaman dengan rotasi kecil pada sumbu $x$. Formulasi dalam penelitian adalah:
+
+$$
+\mathbf{p}'_i =
+\mathbf{R}_x(\theta)
+\left(
+\mathbf{p}_i +
+\begin{bmatrix}
+0\\
+0\\
+\Delta z
+\end{bmatrix}
+\right)
+$$
+
+$\Delta z$ menyatakan perubahan kedalaman, sedangkan $\theta$ merupakan sudut rotasi. Matriks rotasi pada sumbu $x$ dituliskan sebagai:
+
+$$
+\mathbf{R}_x(\theta) =
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & \cos\theta & -\sin\theta\\
+0 & \sin\theta & \cos\theta
+\end{bmatrix}
+$$
+
+Transformasi ini mensimulasikan variasi jarak dan kemiringan kamera agar model tidak hanya berlatih pada konfigurasi koordinat yang sama. Namun, variasi sintetis tidak menggantikan keragaman nyata antarindividu.
+
+<Figure
+  src="/images/journal/bisindo-generalization/augmentation.png"
+  alt="Perbandingan keypoints asli dengan hasil empat teknik augmentasi"
+  width="1878"
+  height="595"
+  caption="Empat transformasi geometris digunakan untuk memperluas variasi fitur keypoints 3D."
+/>
+
+## Rancangan eksperimen dan evaluasi
+
+Dataset internal terdiri atas 520 citra dari satu subjek untuk 26 kelas huruf A–Z. Pembagian stratifikasi 80:20 dilakukan sebelum augmentasi untuk mengurangi risiko *data leakage*. Dataset eksternal berisi 520 citra dari tiga subjek baru, diambil menggunakan webcam laptop dan kamera smartphone.
+
+Dua rancangan dibandingkan: model dasar tanpa augmentasi dan model teraugmentasi. Parameter dioptimasi melalui Grid Search dan evaluasi menggunakan K-Fold Cross-Validation empat fold. Metrik yang dilaporkan adalah accuracy, precision, recall, dan F1-score.
+
+## Hasil: F1-score eksternal meningkat 22,35 poin persentase
+
+Pada data uji internal, model dasar memperoleh F1-score 97,07%, sedangkan model teraugmentasi memperoleh 99,02%. Namun, pengujian eksternal memberikan gambaran yang lebih relevan untuk menilai generalisasi ke subjek baru.
+
+| Metrik | Model dasar | Model teraugmentasi |
+|---|---:|---:|
+| Accuracy | 70,39% | 89,62% |
+| Precision | 69,18% | 90,80% |
+| Recall | 70,38% | 89,62% |
+| F1-score | 67,20% | 89,55% |
+
+F1-score eksternal meningkat dari 67,20% menjadi 89,55%, atau **22,35 poin persentase**. Pada skenario pengujian ini, augmentasi membantu model mempertahankan performa pada data dari subjek baru.
+
+Augmentasi memperbaiki sejumlah pasangan huruf, termasuk A–X, M–N, dan U–V. Kesalahan masih ditemukan pada bentuk yang mirip, seperti C–O, D–P, dan Q–S. Peningkatan metrik keseluruhan tidak berarti semua kelas dikenali sempurna.
+
+<Figure
+  src="/images/journal/bisindo-generalization/results.png"
+  alt="Grafik perbandingan F1-score model dasar dan model teraugmentasi"
+  width="1568"
+  height="658"
+  caption="Perbandingan performa model dasar dan model teraugmentasi pada evaluasi internal dan lintas domain."
+/>
+
+## Kontribusi, luaran, dan pengembangan berikutnya
+
+Penelitian ini menunjukkan bahwa augmentasi geometris keypoints 3D dapat memperluas variasi data ketika jumlah subjek terbatas. Luaran penelitian mencakup artikel ilmiah, model, dan aplikasi demonstrasi. Hasil ini belum membuktikan kesiapan penggunaan luas atau kemampuan menerjemahkan kata dan kalimat BISINDO.
+
+Keterbatasan utama pendekatan ini adalah variasi sintetis tidak dapat sepenuhnya menggantikan keragaman anatomi dan cara membentuk gestur pada populasi nyata. Karena itu, penelitian selanjutnya perlu melibatkan lebih banyak subjek dan mengevaluasi metode pada kondisi pengambilan gambar yang lebih beragam. Pengembangan ke arah pengenalan isyarat dinamis, kata, atau kalimat juga memerlukan rancangan data dan evaluasi tersendiri.
+
+Penelitian ini dipimpin oleh **Denis Eka Cahyani, S.Kom., M.Kom.**, dengan **Muhammad Fa'iz Alfarisi** sebagai anggota tim, serta didukung pendanaan internal Universitas Negeri Malang.

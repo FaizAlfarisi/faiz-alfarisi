@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { FadeIn, StaggerChildren, StaggerItem } from "@/components/ui/motion";
 import { getWritings } from "@/lib/data";
+import { formatArticleDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Journal",
@@ -39,25 +41,62 @@ export default function JournalPage() {
         <StaggerChildren className="space-y-4">
           {writings.map((writing) => {
             const status = statusConfig[writing.status];
+            const isPublished = writing.status === "published";
+
+            const content = (
+              <article className="rounded-lg border border-border bg-surface p-6 transition-all duration-200 hover:border-primary-400 hover:shadow-lg">
+                <div className="mb-3 flex items-center gap-3">
+                  <Badge variant="secondary">{writing.category}</Badge>
+                  <Badge variant={status.variant}>{status.label}</Badge>
+                </div>
+
+                <h2 className="text-xl font-semibold tracking-tight text-foreground">
+                  {writing.title}
+                </h2>
+
+                {writing.excerpt && (
+                  <p className="mt-2 text-base leading-relaxed text-muted-foreground">
+                    {writing.excerpt}
+                  </p>
+                )}
+
+                {writing.status === "coming-soon" && (
+                  <p className="mt-2 text-base text-muted-foreground">
+                    Currently being written. Check back soon.
+                  </p>
+                )}
+
+                {isPublished && (
+                  <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                    {writing.publishedAt && (
+                      <time dateTime={writing.publishedAt}>
+                        {formatArticleDate(writing.publishedAt)}
+                      </time>
+                    )}
+                    {writing.readingTime && (
+                      <>
+                        <span aria-hidden="true">·</span>
+                        <span>{writing.readingTime} min read</span>
+                      </>
+                    )}
+                    <span aria-hidden="true">·</span>
+                    <span className="font-medium text-accent-600">
+                      Read article →
+                    </span>
+                  </div>
+                )}
+              </article>
+            );
 
             return (
               <StaggerItem key={writing.id}>
-                <article className="rounded-lg border border-border bg-surface p-6 transition-all duration-200 hover:border-primary-400 hover:shadow-lg">
-                  <div className="mb-3 flex items-center gap-3">
-                    <Badge variant="secondary">{writing.category}</Badge>
-                    <Badge variant={status.variant}>{status.label}</Badge>
-                  </div>
-
-                  <h2 className="text-xl font-semibold tracking-tight text-foreground">
-                    {writing.title}
-                  </h2>
-
-                  {writing.status === "coming-soon" && (
-                    <p className="mt-2 text-base text-muted-foreground">
-                      Currently being written. Check back soon.
-                    </p>
-                  )}
-                </article>
+                {isPublished ? (
+                  <Link href={`/journal/${writing.slug}`} className="block">
+                    {content}
+                  </Link>
+                ) : (
+                  content
+                )}
               </StaggerItem>
             );
           })}

@@ -154,6 +154,13 @@ export interface Writing {
   slug: string;
   status: "published" | "draft" | "coming-soon";
   category: string;
+  excerpt?: string;
+  author?: string;
+  affiliation?: string;
+  publishedAt?: string;
+  readingTime?: number;
+  cover?: string;
+  paperUrl?: string;
 }
 
 export interface Project {
@@ -237,6 +244,16 @@ export function getSocials(): Socials {
 
 export function getWritings(): Writing[] {
   return writingsData as Writing[];
+}
+
+export function getPublishedWritings(): Writing[] {
+  return getWritings()
+    .filter((writing) => writing.status === "published")
+    .sort((a, b) => a.priority - b.priority);
+}
+
+export function getWritingBySlug(slug: string): Writing | undefined {
+  return getWritings().find((writing) => writing.slug === slug);
 }
 
 export function getProjects(): Projects {

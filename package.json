@@ -13,10 +13,15 @@
   "dependencies": {
     "clsx": "^2.1.1",
     "framer-motion": "^12.12.1",
+    "katex": "^0.19.1",
     "lucide-react": "^0.511.0",
     "next": "^15.3.3",
+    "next-mdx-remote": "^6.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
@@ -29,5 +34,8 @@
     "eslint-config-next": "^15.0.0",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "katex": "^0.19.1"
   }
 }
